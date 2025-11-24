@@ -1,0 +1,1388 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Build Islamic business apps that align faith with profit through strategic storytelling">
+    <meta name="author" content="Zaid Adib Ansari">
+    <meta name="keywords" content="Islamic business, Muslim entrepreneurs, halal business, Islamic apps, creed to commerce">
+    <title>Creed-to-Commerce Toolkit | By Zaid Adib Ansari</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(to bottom right, #ecfdf5, #f0fdf4);
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 56rem;
+            margin: 0 auto;
+        }
+
+        /* Bismillah Header */
+        .bismillah {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .bismillah-arabic {
+            font-size: 1.75rem;
+            color: #065f46;
+            margin-bottom: 0.5rem;
+            font-family: serif;
+            font-weight: bold;
+        }
+
+        .bismillah-english {
+            font-size: 0.875rem;
+            color: #059669;
+            font-weight: 500;
+        }
+
+        /* Main Title Card */
+        .title-card {
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            padding: 2rem;
+            margin-bottom: 1rem;
+            border: 2px solid #047857;
+        }
+
+        .title-card h1 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-card .subtitle {
+            font-size: 1.125rem;
+            color: #d1fae5;
+            margin-bottom: 0.75rem;
+        }
+
+        .creator-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            display: inline-block;
+        }
+
+        .creator-badge p {
+            font-size: 0.875rem;
+            color: white;
+            margin: 0;
+        }
+
+        .creator-badge strong {
+            font-weight: 700;
+        }
+
+        /* Author Credit */
+        .author-credit {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .author-credit p {
+            font-size: 0.75rem;
+            color: #059669;
+            font-weight: 500;
+        }
+
+        /* Progress Steps */
+        .progress-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d1fae5;
+        }
+
+        .steps-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .step-wrapper {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .step-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .step-icon.completed {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+        }
+
+        .step-icon.active {
+            background: linear-gradient(135deg, #d97706, #f59e0b);
+            color: white;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+        }
+
+        .step-icon.inactive {
+            background: #f3f4f6;
+            color: #9ca3af;
+        }
+
+        .step-title {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+            text-align: center;
+            font-weight: 500;
+            max-width: 6rem;
+        }
+
+        .step-title.active {
+            color: #065f46;
+        }
+
+        .step-title.inactive {
+            color: #6b7280;
+        }
+
+        .step-line {
+            height: 0.25rem;
+            flex: 1;
+            margin: 0 0.5rem;
+            border-radius: 0.125rem;
+        }
+
+        .step-line.completed {
+            background: linear-gradient(to right, #059669, #10b981);
+        }
+
+        .step-line.incomplete {
+            background: #e5e7eb;
+        }
+
+        /* Content Card */
+        .content-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #d1fae5;
+        }
+
+        /* Step Content */
+        .step-content {
+            display: none;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        /* Foundation Step Styles */
+        .gradient-box {
+            background: linear-gradient(to right, #d1fae5, #dbeafe);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #059669;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-box h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #065f46;
+            margin-bottom: 0.75rem;
+        }
+
+        .principle-card {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+            border: 1px solid #d1fae5;
+            margin-bottom: 1.5rem;
+        }
+
+        .principle-card h4 {
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #059669;
+            margin-bottom: 0.5rem;
+        }
+
+        .principle-card .description {
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+
+        .application-box {
+            background: linear-gradient(to right, #fef3c7, #dbeafe);
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            border-left: 3px solid #d97706;
+        }
+
+        .application-box p:first-child {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.25rem;
+        }
+
+        .application-box p:last-child {
+            font-size: 0.875rem;
+            color: #78350f;
+        }
+
+        .advantage-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #d97706;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
+            margin-top: 1.5rem;
+        }
+
+        .advantage-box h4 {
+            font-weight: bold;
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: #78350f;
+        }
+
+        .advantage-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            list-style: none;
+        }
+
+        .advantage-list li {
+            display: flex;
+            align-items: flex-start;
+            color: #374151;
+        }
+
+        .checkmark {
+            color: #059669;
+            margin-right: 0.5rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        /* Assessment Step Styles */
+        .assessment-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+        }
+
+        .assessment-box h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #065f46;
+            margin-bottom: 1rem;
+        }
+
+        .question-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .question-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #065f46;
+            margin-bottom: 0.75rem;
+        }
+
+        .option-button {
+            width: 100%;
+            padding: 1rem;
+            text-align: left;
+            border-radius: 0.5rem;
+            border: 2px solid #d1fae5;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 0.5rem;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .option-button:hover {
+            border-color: #10b981;
+        }
+
+        .option-button.selected {
+            border-color: #059669;
+            background: linear-gradient(to right, #d1fae5, #ecfdf5);
+        }
+
+        .option-button.selected span {
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        /* Concept Step Styles */
+        .concept-card {
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border: 2px solid #d1fae5;
+            background: white;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+
+        .concept-card:hover {
+            border-color: #10b981;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+        }
+
+        .concept-card.selected {
+            border-color: #059669;
+            background: linear-gradient(to right, #d1fae5, #ecfdf5);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+        }
+
+        .concept-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .concept-header h4 {
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #1f2937;
+        }
+
+        .concept-card.selected .concept-header h4 {
+            color: #065f46;
+        }
+
+        .selected-check {
+            color: #059669;
+            font-size: 1.5rem;
+        }
+
+        .concept-detail {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-bottom: 0.75rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 0.75rem;
+        }
+
+        .features-list li {
+            font-size: 0.875rem;
+            color: #4b5563;
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
+        }
+
+        .bullet {
+            color: #059669;
+            margin-right: 0.5rem;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 2rem 0;
+            color: #6b7280;
+        }
+
+        /* Story Step Styles */
+        .selected-concept-box {
+            background: linear-gradient(to right, #d1fae5, #ecfdf5);
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #059669;
+        }
+
+        .selected-concept-box p:first-child {
+            font-weight: 600;
+            color: #065f46;
+            margin-bottom: 0.5rem;
+        }
+
+        .selected-concept-box p:last-child {
+            font-size: 1.125rem;
+            font-weight: bold;
+            color: #047857;
+        }
+
+        .story-card {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border: 2px solid #d1fae5;
+            box-shadow: 0 1px 4px rgba(5, 150, 105, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .story-card h4 {
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #065f46;
+            margin-bottom: 0.75rem;
+        }
+
+        .story-detail {
+            font-size: 0.875rem;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .story-detail strong {
+            color: #374151;
+        }
+
+        .conversion-path {
+            font-size: 0.875rem;
+            color: #1e40af;
+        }
+
+        .conversion-path strong {
+            color: #1e3a8a;
+        }
+
+        /* Action Plan Styles */
+        .action-header {
+            background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        .action-header h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+        }
+
+        .action-header p {
+            color: #d1fae5;
+        }
+
+        .action-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+            margin-bottom: 1.5rem;
+        }
+
+        .action-section.green {
+            border-left: 4px solid #059669;
+        }
+
+        .action-section.teal {
+            border-left: 4px solid #10b981;
+        }
+
+        .action-section.gold {
+            border-left: 4px solid #d97706;
+        }
+
+        .action-section h4 {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: #065f46;
+            margin-bottom: 1rem;
+        }
+
+        .action-section.gold h4 {
+            color: #92400e;
+        }
+
+        .action-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .action-icon {
+            margin-right: 0.75rem;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .action-icon.green {
+            color: #059669;
+        }
+
+        .action-icon.teal {
+            color: #10b981;
+        }
+
+        .action-icon.gold {
+            color: #d97706;
+        }
+
+        .action-item-title {
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .action-item-desc {
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+
+        .kpi-box {
+            background: linear-gradient(to right, #dbeafe, #e0e7ff);
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            border-left: 4px solid #1e40af;
+            margin-bottom: 1.5rem;
+        }
+
+        .kpi-box h4 {
+            font-weight: bold;
+            font-size: 1.125rem;
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+        }
+
+        .kpi-box p {
+            color: #1e40af;
+            margin-bottom: 0.75rem;
+        }
+
+        .kpi-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #1e40af;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .action-btn.green {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+        }
+
+        .action-btn.blue {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation Buttons */
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .nav-btn.prev {
+            background: white;
+            color: #059669;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+            border: 2px solid #d1fae5;
+        }
+
+        .nav-btn.next {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
+        }
+
+        .nav-btn:disabled {
+            background: #f3f4f6;
+            color: #9ca3af;
+            box-shadow: none;
+            cursor: not-allowed;
+            border: none;
+        }
+
+        .nav-btn:not(:disabled):hover {
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(to right, #fef3c7, #fde68a);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.2);
+            border: 2px solid #f59e0b;
+        }
+
+        .footer p {
+            margin: 0.25rem 0;
+            color: #78350f;
+        }
+
+        .footer .framework {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .footer .tagline {
+            font-size: 0.85em;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer hr {
+            border: none;
+            border-top: 2px solid #fbbf24;
+            margin: 15px 0;
+        }
+
+        .footer .creator-name {
+            font-size: 1.1em;
+            font-weight: 700;
+        }
+
+        .footer .company {
+            font-size: 0.85em;
+        }
+
+        .footer .version {
+            margin-top: 15px;
+            font-size: 0.75em;
+            color: #92400e;
+        }
+
+        .footer .dua {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #78350f;
+        }
+
+        .footer .dua-english {
+            font-size: 0.8em;
+            color: #92400e;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title-card h1 {
+                font-size: 1.75rem;
+            }
+
+            .title-card .subtitle {
+                font-size: 1rem;
+            }
+
+            .bismillah-arabic {
+                font-size: 1.5rem;
+            }
+
+            .step-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.25rem;
+            }
+
+            .step-title {
+                font-size: 0.7rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .navigation {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bismillah Header -->
+        <div class="bismillah">
+            <div class="bismillah-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <div class="bismillah-english">In the name of Allah, the Most Gracious, the Most Merciful</div>
+        </div>
+
+        <!-- Main Title Card -->
+        <div class="title-card">
+            <h1>Creed-to-Commerce Toolkit</h1>
+            <p class="subtitle">
+                Build Islamic business apps that align faith with profit through strategic storytelling
+            </p>
+            <div class="creator-badge">
+                <p>Created by <strong>Zaid Adib Ansari</strong></p>
+            </div>
+        </div>
+
+        <!-- Author Credit -->
+        <div class="author-credit">
+            <p>The Balanced Middle Path Academy, LLC</p>
+        </div>
+
+        <!-- Progress Steps -->
+        <div class="progress-card">
+            <div class="steps-container" id="stepsContainer">
+                <!-- Steps will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Content Card -->
+        <div class="content-card">
+            <div id="stepContent">
+                <!-- Step content will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="nav-btn prev" id="prevBtn" onclick="previousStep()">
+                ← Previous
+            </button>
+            <button class="nav-btn next" id="nextBtn" onclick="nextStep()">
+                Next →
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="framework">Creed-to-Commerce Framework</p>
+            <p class="tagline">Building Islamic businesses with purpose and profit</p>
+            <hr>
+            <p class="creator-name">Created by Zaid Adib Ansari</p>
+            <p class="company">The Balanced Middle Path Academy, LLC</p>
+            <p class="company">Balanced Middle Path Solutions (BMPS)</p>
+            <p class="version">Version 1.0 | November 2024</p>
+            <p class="dua">بارك الله فيكم</p>
+            <p class="dua-english">(May Allah bless you)</p>
+        </div>
+    </div>
+
+    <script>
+        // Application State
+        let currentStep = 0;
+        let assessmentData = {
+            primaryFocus: null,
+            audienceSize: null,
+            techLevel: null
+        };
+        let selectedConcept = null;
+
+        // Data
+        const steps = [
+            { title: "Islamic Business Foundation", icon: "📚" },
+            { title: "Market Assessment", icon: "🎯" },
+            { title: "App Concept Generator", icon: "💡" },
+            { title: "Story Framework", icon: "👥" },
+            { title: "Action Plan", icon: "📈" }
+        ];
+
+        const islamicPrinciples = [
+            {
+                name: "Tawhid (Unity of Purpose)",
+                description: "Every business decision reflects worship through right intention",
+                businessApplication: "Align all activities with serving Allah through serving creation"
+            },
+            {
+                name: "Amanah (Trust/Responsibility)",
+                description: "Business as stewardship of Allah's resources",
+                businessApplication: "Build transparency and accountability in every process"
+            },
+            {
+                name: "Adl (Justice)",
+                description: "Trust in Allah's provision while taking practical action",
+                businessApplication: "Balance effort and reliance on Allah in business planning"
+            },
+            {
+                name: "Ummah (Community)",
+                description: "Individual success serves collective benefit",
+                businessApplication: "Create businesses that strengthen the Muslim community"
+            },
+            {
+                name: "Niyyah (Business Planning)",
+                description: "Every action begins with proper intention",
+                businessApplication: "Halal revenue streams with community impact"
+            }
+        ];
+
+        const appConcepts = [
+            {
+                name: "Halal Income Tracker",
+                foundation: "Combines financial discipline with Islamic accountability",
+                features: ["Islamic financial planning", "Halal/Haram income tracking", "Zakat integration", "Barakah measurement"],
+                targetAudience: "Muslim entrepreneurs starting new ventures"
+            },
+            {
+                name: "Dua Reminders",
+                foundation: "Technology supporting spiritual connection",
+                features: ["Context-aware dua suggestions", "Daily dua tracking", "Community sharing", "Progress visualization"],
+                targetAudience: "Busy Muslims seeking consistent spiritual practice"
+            },
+            {
+                name: "Rizq Tracker",
+                foundation: "Trust in Allah's provision while taking practical means",
+                features: ["Islamic financial planning", "Halal/Haram income tracking", "Zakat integration", "Barakah measurement"],
+                targetAudience: "Muslim business owners managing finances"
+            },
+            {
+                name: "Ummah Market Validator",
+                foundation: "Serving community through beneficial commerce",
+                features: ["Community needs assessment", "Islamic market compliance", "Impact measurement", "Ummah feedback"],
+                targetAudience: "Muslim professionals and entrepreneurs"
+            },
+            {
+                name: "Barakah Daily Habits",
+                foundation: "Muslim professionals integrating faith into daily work",
+                features: ["Prayer-integrated scheduling", "Dhikr reminders", "Islamic time management", "Spiritual KPIs"],
+                targetAudience: "Muslim professionals seeking faith-work balance"
+            },
+            {
+                name: "The Halal Hustle",
+                foundation: "Ethical entrepreneurship within Islamic bounds",
+                features: ["Halal business opportunities", "Islamic compliance checking", "Mentorship connections", "Community support"],
+                targetAudience: "Young Muslims starting businesses"
+            }
+        ];
+
+        const storyTemplates = [
+            {
+                title: "The Migration Story",
+                framework: "From struggle (Makkah) to success (Madinah) through faith",
+                conversionPath: "Prophet's Business Journey"
+            },
+            {
+                title: "The Day I Realized My 'Hustle' Contradicted My Tawakkul",
+                framework: "Personal crisis leading to Islamic solution",
+                conversionPath: "Niyyah Business Planner"
+            },
+            {
+                title: "How Islamic Financial Principles Saved My Business",
+                framework: "Contrast between conventional and Islamic approaches",
+                conversionPath: "Rizq Tracker"
+            },
+            {
+                title: "Why Muslim Entrepreneurs Track Money Differently",
+                framework: "Educational approach showing Islamic distinction",
+                conversionPath: "Rizq Tracker"
+            },
+            {
+                title: "The Business That Failed Because It Only Served Me",
+                framework: "Community-focused transformation",
+                conversionPath: "Ummah Market Validator"
+            },
+            {
+                title: "How Community-First Thinking 10x'd My Revenue",
+                framework: "Success through service",
+                conversionPath: "Ummah Economics Series"
+            },
+            {
+                title: "From Modern Business Plans to 'Would-Think-of-It' Plans",
+                framework: "Comparison framework",
+                conversionPath: "What Would Prophet ﷺ Do Framework"
+            }
+        ];
+
+        // Helper Functions
+        function canProceed() {
+            if (currentStep === 1) {
+                return assessmentData.primaryFocus && assessmentData.audienceSize && assessmentData.techLevel;
+            }
+            if (currentStep === 2) {
+                return selectedConcept !== null;
+            }
+            return true;
+        }
+
+        function getGeneratedConcepts() {
+            if (!assessmentData.primaryFocus) return [];
+            
+            let filtered = appConcepts.filter(concept => {
+                if (assessmentData.primaryFocus === 'starting' && concept.name.includes('Halal')) return true;
+                if (assessmentData.primaryFocus === 'validating' && concept.name.includes('Ummah')) return true;
+                if (assessmentData.primaryFocus === 'scaling' && concept.name.includes('Rizq')) return true;
+                return false;
+            });
+
+            return filtered.length > 0 ? filtered : appConcepts.slice(0, 3);
+        }
+
+        function getStoryFramework() {
+            if (!selectedConcept) return [];
+            
+            let filtered = storyTemplates.filter(template => {
+                return template.conversionPath.includes(selectedConcept.name.split(' ')[0]);
+            });
+
+            return filtered.length > 0 ? filtered : storyTemplates.slice(0, 3);
+        }
+
+        // Render Functions
+        function renderProgressSteps() {
+            const container = document.getElementById('stepsContainer');
+            let html = '';
+
+            steps.forEach((step, index) => {
+                const isActive = index === currentStep;
+                const isCompleted = index < currentStep;
+                
+                let iconClass = 'inactive';
+                let titleClass = 'inactive';
+                
+                if (isCompleted) {
+                    iconClass = 'completed';
+                } else if (isActive) {
+                    iconClass = 'active';
+                    titleClass = 'active';
+                }
+
+                html += `
+                    <div class="step-wrapper">
+                        <div class="step">
+                            <div class="step-icon ${iconClass}">
+                                ${step.icon}
+                            </div>
+                            <span class="step-title ${titleClass}">${step.title}</span>
+                        </div>
+                        ${index < steps.length - 1 ? `
+                            <div class="step-line ${index < currentStep ? 'completed' : 'incomplete'}"></div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function renderFoundationStep() {
+            return `
+                <div class="gradient-box">
+                    <h3>Islamic Business Foundation</h3>
+                    <p style="color: #374151; margin-bottom: 1rem;">
+                        Unlike traditional business tools that focus on isolated pain points, Islamic entrepreneurship 
+                        begins with establishing the spiritual foundation that guides all business decisions.
+                    </p>
+                </div>
+
+                ${islamicPrinciples.map(principle => `
+                    <div class="principle-card">
+                        <h4>${principle.name}</h4>
+                        <p class="description">${principle.description}</p>
+                        <div class="application-box">
+                            <p>Business Application:</p>
+                            <p>${principle.businessApplication}</p>
+                        </div>
+                    </div>
+                `).join('')}
+
+                <div class="advantage-box">
+                    <h4>The Creed-to-Commerce Advantage</h4>
+                    <p style="color: #374151; margin-bottom: 0.75rem;">
+                        When Muslim entrepreneurs ground their business decisions in Islamic principles first, they create ventures that are:
+                    </p>
+                    <ul class="advantage-list">
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span><strong>Spiritually aligned</strong> - Business becomes worship through right intention</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span><strong>Community-focused</strong> - Success measured by collective benefit</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span><strong>Sustainably profitable</strong> - Barakah in revenue through halal means</span>
+                        </li>
+                        <li>
+                            <span class="checkmark">✓</span>
+                            <span><strong>Purpose-driven</strong> - Clear mission serving Allah's pleasure</span>
+                        </li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        function renderAssessmentStep() {
+            return `
+                <div class="assessment-box">
+                    <h3>Market Assessment</h3>
+                    <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                        Understanding your current position helps us recommend the right Islamic business tools for your journey.
+                    </p>
+
+                    <div class="question-section">
+                        <label class="question-label">What's your primary business focus right now?</label>
+                        ${['starting', 'validating', 'scaling'].map(focus => `
+                            <button class="option-button ${assessmentData.primaryFocus === focus ? 'selected' : ''}" 
+                                    onclick="selectOption('primaryFocus', '${focus}')">
+                                <span style="text-transform: capitalize;">${focus} a new business venture</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div class="question-section">
+                        <label class="question-label">What's your target audience size?</label>
+                        ${['local', 'regional', 'global'].map(size => `
+                            <button class="option-button ${assessmentData.audienceSize === size ? 'selected' : ''}" 
+                                    onclick="selectOption('audienceSize', '${size}')">
+                                <span style="text-transform: capitalize;">${size} Muslim community</span>
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <div class="question-section">
+                        <label class="question-label">Your technical comfort level?</label>
+                        ${['beginner', 'intermediate', 'advanced'].map(level => `
+                            <button class="option-button ${assessmentData.techLevel === level ? 'selected' : ''}" 
+                                    onclick="selectOption('techLevel', '${level}')">
+                                <span style="text-transform: capitalize;">${level}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderConceptStep() {
+            const concepts = getGeneratedConcepts();
+            
+            return `
+                <div class="assessment-box">
+                    <h3>Islamic App Concepts for You</h3>
+                    <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                        Based on your assessment, here are app concepts that align with Islamic principles and your goals.
+                    </p>
+
+                    ${concepts.length === 0 ? `
+                        <div class="empty-state">
+                            <p>Complete the assessment to see personalized app concepts.</p>
+                        </div>
+                    ` : concepts.map((concept, index) => `
+                        <div class="concept-card ${selectedConcept?.name === concept.name ? 'selected' : ''}" 
+                             onclick='selectConcept(${JSON.stringify(concept).replace(/'/g, "&apos;")})'>
+                            <div class="concept-header">
+                                <h4>${concept.name}</h4>
+                                ${selectedConcept?.name === concept.name ? '<span class="selected-check">✓</span>' : ''}
+                            </div>
+                            <p class="concept-detail">
+                                <strong>Foundation:</strong> ${concept.foundation}
+                            </p>
+                            <div style="margin-bottom: 0.75rem;">
+                                <p style="font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 0.5rem;">Key Features:</p>
+                                <ul class="features-list">
+                                    ${concept.features.map(feature => `
+                                        <li><span class="bullet">•</span>${feature}</li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                            <p style="font-size: 0.875rem; color: #1d4ed8;">
+                                <strong>Target:</strong> ${concept.targetAudience}
+                            </p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderStoryStep() {
+            const stories = getStoryFramework();
+            
+            return `
+                <div class="assessment-box">
+                    <h3>Your Story Framework</h3>
+                    <p style="color: #4b5563; margin-bottom: 1.5rem;">
+                        Effective Islamic marketing tells authentic stories that connect faith with practical solutions.
+                    </p>
+
+                    ${selectedConcept ? `
+                        <div class="selected-concept-box">
+                            <p>Selected Concept:</p>
+                            <p>${selectedConcept.name}</p>
+                        </div>
+                    ` : ''}
+
+                    ${stories.length === 0 ? `
+                        <div class="empty-state">
+                            <p>Select an app concept to see recommended story frameworks.</p>
+                        </div>
+                    ` : stories.map(story => `
+                        <div class="story-card">
+                            <h4>${story.title}</h4>
+                            <p class="story-detail">
+                                <strong>Framework:</strong> ${story.framework}
+                            </p>
+                            <p class="conversion-path">
+                                <strong>Conversion Path:</strong> ${story.conversionPath}
+                            </p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderActionPlan() {
+            return `
+                <div class="action-header">
+                    <h3>Your Islamic Business Action Plan</h3>
+                    <p>
+                        Here's your personalized roadmap for building an Islamic business app that serves Allah and the Ummah.
+                    </p>
+                </div>
+
+                ${selectedConcept ? `
+                    <div class="action-section green">
+                        <h4>Week 1-2: Foundation & Planning</h4>
+                        <ul class="action-list">
+                            <li class="action-item">
+                                <span class="action-icon green">✓</span>
+                                <div>
+                                    <p class="action-item-title">Refine your niyyah (intention)</p>
+                                    <p class="action-item-desc">Document how ${selectedConcept.name} serves Allah and benefits the Ummah</p>
+                                </div>
+                            </li>
+                            <li class="action-item">
+                                <span class="action-icon green">✓</span>
+                                <div>
+                                    <p class="action-item-title">Validate with the community</p>
+                                    <p class="action-item-desc">Interview 10 potential users from your target audience</p>
+                                </div>
+                            </li>
+                            <li class="action-item">
+                                <span class="action-icon green">✓</span>
+                                <div>
+                                    <p class="action-item-title">Create your MVP spec</p>
+                                    <p class="action-item-desc">Define core features that deliver immediate value</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                ` : ''}
+
+                <div class="action-section teal">
+                    <h4>Week 3-4: Build & Launch</h4>
+                    <ul class="action-list">
+                        <li class="action-item">
+                            <span class="action-icon teal">✓</span>
+                            <div>
+                                <p class="action-item-title">Develop MVP</p>
+                                <p class="action-item-desc">Build the minimum viable version focusing on core Islamic value proposition</p>
+                            </div>
+                        </li>
+                        <li class="action-item">
+                            <span class="action-icon teal">✓</span>
+                            <div>
+                                <p class="action-item-title">Create your story content</p>
+                                <p class="action-item-desc">Write and publish your Islamic business story using the frameworks above</p>
+                            </div>
+                        </li>
+                        <li class="action-item">
+                            <span class="action-icon teal">✓</span>
+                            <div>
+                                <p class="action-item-title">Soft launch to community</p>
+                                <p class="action-item-desc">Release to a small group of early adopters for feedback</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="action-section gold">
+                    <h4>Month 2: Growth & Barakah</h4>
+                    <ul class="action-list">
+                        <li class="action-item">
+                            <span class="action-icon gold">★</span>
+                            <div>
+                                <p class="action-item-title">Measure community impact</p>
+                                <p class="action-item-desc">Track how your app strengthens Islamic practice and community bonds</p>
+                            </div>
+                        </li>
+                        <li class="action-item">
+                            <span class="action-icon gold">★</span>
+                            <div>
+                                <p class="action-item-title">Iterate based on feedback</p>
+                                <p class="action-item-desc">Continuously improve while staying true to Islamic principles</p>
+                            </div>
+                        </li>
+                        <li class="action-item">
+                            <span class="action-icon gold">★</span>
+                            <div>
+                                <p class="action-item-title">Scale with intention</p>
+                                <p class="action-item-desc">Grow your user base while maintaining quality and Islamic integrity</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="kpi-box">
+                    <h4>Community KPIs</h4>
+                    <p>Measure success beyond revenue:</p>
+                    <ul class="kpi-list">
+                        <li>• Mentorship connections made</li>
+                        <li>• Halal business opportunities created</li>
+                        <li>• Educational content consumption</li>
+                        <li>• Ummah economic impact stories</li>
+                    </ul>
+                </div>
+            `;
+        }
+
+        function renderStepContent() {
+            const contentDiv = document.getElementById('stepContent');
+            
+            switch(currentStep) {
+                case 0:
+                    contentDiv.innerHTML = renderFoundationStep();
+                    break;
+                case 1:
+                    contentDiv.innerHTML = renderAssessmentStep();
+                    break;
+                case 2:
+                    contentDiv.innerHTML = renderConceptStep();
+                    break;
+                case 3:
+                    contentDiv.innerHTML = renderStoryStep();
+                    break;
+                case 4:
+                    contentDiv.innerHTML = renderActionPlan();
+                    break;
+            }
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.disabled = currentStep === steps.length - 1 || !canProceed();
+            
+            if (currentStep === steps.length - 1) {
+                nextBtn.textContent = 'Complete';
+            } else {
+                nextBtn.textContent = 'Next →';
+            }
+        }
+
+        // Event Handlers
+        function selectOption(field, value) {
+            assessmentData[field] = value;
+            renderStepContent();
+            updateNavigation();
+        }
+
+        function selectConcept(concept) {
+            selectedConcept = concept;
+            renderStepContent();
+            updateNavigation();
+        }
+
+        function previousStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderProgressSteps();
+                renderStepContent();
+                updateNavigation();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < steps.length - 1 && canProceed()) {
+                currentStep++;
+                renderProgressSteps();
+                renderStepContent();
+                updateNavigation();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Initialize
+        window.onload = function() {
+            renderProgressSteps();
+            renderStepContent();
+            updateNavigation();
+        };
+    </script>
+</body>
+</html>
